@@ -58,7 +58,7 @@
         <div class="w-full overflow-x-hidden border-t flex flex-col">
             <!-- content -->
             <?= $this->renderSection('content'); ?>
-            <footer class="w-full bg-white text-right p-4">
+            <footer class="w-full bg-white text-center p-4">
                 @<a target="_blank" href="#" class="underline">BaliTours</a>.
             </footer>
         </div>

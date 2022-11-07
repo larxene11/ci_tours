@@ -27,8 +27,12 @@
 
     <div class="w-full mt-12">
         <p class="text-xl pb-3 flex items-center">
-            <i class="fas fa-list mr-3"></i> Latest Reports
+            <i class="fas fa-list mr-3"></i> Latest Report
         </p>
+        <div class="card-header py-3">
+            <a href="<?= base_url('/pesanan/cetak'); ?>" class="btn btn-outline-warning btn-sm mb-2 ml-2"><i class="fas fa-print"></i> Export PDF</a>
+            <a href="<?= base_url('/pesanan/create'); ?>" class="btn btn-outline-info btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
+        </div>
         <div class="bg-white overflow-auto">
             <table class="min-w-full bg-white">
                 <thead class="bg-gray-800 text-white">
@@ -91,6 +95,8 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
     </div>
 </main>
 <?= $this->endSection(); ?>
