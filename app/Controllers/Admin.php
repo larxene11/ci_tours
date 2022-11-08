@@ -33,11 +33,9 @@ class Admin extends BaseController
         if ($this->session->get('role') != 1) {
             return redirect()->to('/pegawai');
         }
-        $data['customer'] = $this->customer->asObject()->findAll();
+        $data['paket'] = $this->paket->asObject()->findAll();
         $data['pesanan'] = $this->pesanan->asObject()->getAll();
-        $data['obat'] = $this->obat->asObject()->findAll();
-        $data['pegawai'] = $this->pegawai->asObject()->findAll();
-        $data['user'] = $this->userModel->getAdmin(session()->get('username'));
+        $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         return view('admin/dashboard', $data);
     }
 

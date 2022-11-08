@@ -9,7 +9,7 @@ class PaketModel extends Model
     protected $table = 'admin';
     protected $primaryKey = 'id_admin';
     protected $returnType = 'object';
-    protected $allowedFields = ["username", "password", "role"];
+    protected $allowedFields = ["username", "password"];
     protected $useTimestamps = false;
 
     public function getAdmin($username)

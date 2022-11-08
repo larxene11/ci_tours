@@ -15,6 +15,7 @@ class PesananModel extends Model
     function getAll()
     {
         $builder = $this->db->table('pesanan');
+        $builder->select('*, harga_paket AS total_biaya');
         $builder->join('paket', 'paket.id_paket = pesanan.id_paket');
         $query = $builder->get();
         return $query->getResult();
