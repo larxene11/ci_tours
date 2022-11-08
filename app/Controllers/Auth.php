@@ -50,7 +50,7 @@ class Auth extends BaseController
         //jika ada error kembalikan ke halaman register
         if ($errors) {
             session()->setFlashdata('error', $errors);
-            return redirect()->to(base_url('home/register'));
+            return redirect()->to(base_url('auth/register'));
         }
 
         //jika tdk ada error 
@@ -69,7 +69,7 @@ class Auth extends BaseController
 
         //arahkan ke halaman login
         session()->setFlashdata('login', 'Anda berhasil mendaftar, silahkan login');
-        return redirect()->to(base_url('home/login'));
+        return redirect()->to(base_url('auth/login'));
     }
 
     public function valid_login()

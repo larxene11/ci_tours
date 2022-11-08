@@ -28,11 +28,6 @@ class Admin extends BaseController
         if (!$this->session->has('isLogin')) {
             return redirect()->to('/auth/login');
         }
-
-        //cek role dari session
-        if ($this->session->get('role') != 1) {
-            return redirect()->to('/pegawai');
-        }
         $data['paket'] = $this->paket->asObject()->findAll();
         $data['pesanan'] = $this->pesanan->asObject()->getAll();
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));

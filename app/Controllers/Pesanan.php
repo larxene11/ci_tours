@@ -12,9 +12,9 @@ class Pesanan extends BaseController
     public function __construct()
     {
         $this->session = session();
+        $this->admin = new AdminModel();
         $this->paket = new PaketModel();
         $this->pesanan = new PesananModel();
-        $this->admin = new AdminModel();
     }
 
     public function index()
