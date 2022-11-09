@@ -50,13 +50,8 @@ class Auth extends BaseController
         //jika ada error kembalikan ke halaman register
         if ($errors) {
             session()->setFlashdata('error', $errors);
-            return redirect()->to(base_url('auth/register'));
+            return redirect()->to(base_url('/register'));
         }
-
-        //jika tdk ada error 
-
-        // //buat salt
-        // $salt = uniqid('', true);
 
         //hash password digabung dengan salt
         $password = md5($data['password']);
@@ -68,8 +63,8 @@ class Auth extends BaseController
         ]);
 
         //arahkan ke halaman login
-        session()->setFlashdata('login', 'Anda berhasil mendaftar, silahkan login');
-        return redirect()->to(base_url('auth/login'));
+        session()->setFlashdata('register', 'Anda berhasil mendaftar, silahkan login');
+        return redirect()->to(base_url('/login'));
     }
 
     public function valid_login()
@@ -78,23 +73,23 @@ class Auth extends BaseController
         $data = $this->request->getPost();
 
         //ambil data user di database yang usernamenya sama 
-        $user = $this->userModel->where('username', $data['username'])->first();
+        $admin = $this->admin->where('username', $data['username'])->first();
 
         //cek apakah username ditemukan
-        if ($user) {
+        if ($admin) {
             //cek password
             //jika salah arahkan lagi ke halaman login
-            if ($user['password'] != md5($data['password'])) {
+            if ($admin['password'] != md5($data['password'])) {
                 session()->setFlashdata('password', 'Password salah');
-                return redirect()->to(site_url('auth/login'));
+                return redirect()->to(site_url('/login'));
             } else {
                 //jika benar, arahkan user masuk ke aplikasi 
                 $sessLogin = [
                     'isLogin' => true,
-                    'username' => $user['username']
+                    'username' => $admin['username'],
                 ];
                 $this->session->set($sessLogin);
-                return redirect()->to(base_url('admin'));
+                return redirect()->to(base_url('/dashboard'));
             }
         } else {
             //jika username tidak ditemukan, balikkan ke halaman login
@@ -108,6 +103,6 @@ class Auth extends BaseController
         //hancurkan session 
         //balikan ke halaman login
         $this->session->destroy();
-        return redirect()->to(site_url('auth/login'));
+        return redirect()->to(site_url('/login'));
     }
 }

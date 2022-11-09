@@ -1,3 +1,6 @@
+<?= $this->extend('backend/index'); ?>
+
+<?= $this->Section('content'); ?>
 <div class="w-full mt-12">
     <p class="text-xl pb-3 flex items-center">
         <i class="fas fa-list mr-3"></i> Tabel Pesanan
@@ -69,3 +72,4 @@
         </table>
     </div>
 </div>
+<?= $this->endSection(); ?>
