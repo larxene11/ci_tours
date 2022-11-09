@@ -6,7 +6,7 @@
     <div class="border text-right px-2">
         <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
             <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
-            <li class="hover:text-gray-900"><a href="#">Package AA</a></li>
+            <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
             <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
             <li class="hover:text-gray-900"><a href="#">Package AC</a></li>
 

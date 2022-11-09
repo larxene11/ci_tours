@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('user/paket');
     }
+
+    public function detail()
+    {
+        return view('user/paket_detail');
+    }
 }
