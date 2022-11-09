@@ -44,7 +44,6 @@ $routes->post('/login/process', 'Auth::valid_login');
 $routes->post('/register/process', 'Auth::valid_register');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/dashboard', 'Admin::dashboard');
-$routes->get('/home', 'home::index');
 $routes->get('/detail', 'home::detail');
 
 /*

@@ -13,9 +13,9 @@
         <table class="min-w-full bg-white">
             <thead class="bg-gray-800 text-white">
                 <tr>
+                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last name</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Phone</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
                 </tr>
             </thead>
