@@ -37,15 +37,30 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/detail', 'home::detail');
+
 $routes->get('/admin', 'Auth::login');
 $routes->get('/login', 'Auth::login');
 $routes->get('/register', 'Auth::register');
 $routes->post('/login/process', 'Auth::valid_login');
 $routes->post('/register/process', 'Auth::valid_register');
 $routes->get('/logout', 'Auth::logout');
-$routes->get('/dashboard', 'Admin::dashboard');
-$routes->get('/detail', 'home::detail');
 
+$routes->get('/dashboard', 'Admin::dashboard');
+
+$routes->get('/data/pesanan', 'Pesanan::index');
+$routes->get('/pesanan/new', 'Pesanan::create');
+$routes->post('/pesanan/create', 'Pesanan::store');
+$routes->get('/pesanan/edit/(:segment)', 'Pesanan::edit/$1');
+$routes->put('/pesanan/update/(:segment)', 'Pesanan::update/$1');
+$routes->delete('/pesanan/delete/(:segment)', 'pesanan::delete/$1');
+
+$routes->get('/data/paket', 'Paket::index');
+$routes->get('/anggota/create', 'Anggota::create');
+$routes->post('/anggota/store', 'Anggota::store');
+$routes->get('/anggota/edit/(:num)', 'Anggota::edit/$1');
+$routes->post('/anggota/update/(:num)', 'Anggota::update/$1');
+$routes->get('/anggota/delete/(:num)', 'Anggota::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

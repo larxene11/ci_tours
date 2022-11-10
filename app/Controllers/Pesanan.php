@@ -36,7 +36,7 @@ class Pesanan extends BaseController
     {
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $this->paket->findAll();
-        return view('tb_pesanan/create', $data);
+        return view('vw_pesanan/create', $data);
     }
 
     public function store()
