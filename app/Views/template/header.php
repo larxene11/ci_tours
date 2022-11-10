@@ -7,9 +7,9 @@
     </a>
     <div class="inline-flex flex-col">
         <ul class="flex flex-row gap-4">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Testimony</a></li>
+            <li><a href="<?= base_url('/about') ?>">About Us</a></li>
+            <li><a href="<?= base_url('/contact') ?>">Contact Us</a></li>
+            <li><a href="<?= base_url('/testimony') ?>">Testimony</a></li>
         </ul>
         <p class="text-align-right">For last minute booking please contact us via <br>Whatsapp: +6287 8629 83711</p>
     </div>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <script src="https://cdn.tiny.cloud/1/jb0bk5gh9rzj1v5j996mk79am9i1kxlzxli03sdwt27c7t6y/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
@@ -9,6 +10,11 @@
         });
     </script>
 
+=======
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  
+<script>tinymce.init({selector:'textarea'});</script>
+>>>>>>> dafef3adf5c42794d663b62f8b2664f4c5395f56
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Admin Template</title>
