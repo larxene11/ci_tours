@@ -1,9 +1,9 @@
 <?= $this->extend('template/index'); ?>
 
 <?= $this->Section('content'); ?>
-<div class="grid grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2">
+<div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
     <!-- left -->
-    <div class="border text-right px-2">
+    <div class="border text-right px-2 max-md:hidden">
         <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
             <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
             <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
@@ -32,7 +32,7 @@
         <strong>Please select our Bali Day Tour Packages that you can choose as on your need during your holiday in Bali<br><br></strong>
 
         <div class="flex flex-col items-center bg-white border md:flex-row ">
-            <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2" src="/dummyimage.jpg" alt="">
+            <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2 sm:w-20 sm:h-auto" src="/dummyimage.jpg" alt="">
             <div class="flex flex-col justify-between p-4 leading-normal">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
                 <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
@@ -42,12 +42,35 @@
         <br>
 
         <div class="flex flex-col items-center bg-white border md:flex-row ">
-            <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2" src="/dummyimage.jpg" alt="">
+            <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2 sm:w-20 sm:h-auto" src="/dummyimage.jpg" alt="">
             <div class="flex flex-col justify-between p-4 leading-normal">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
                 <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
-</div></div>
+    </div>
+
+    <!-- MOBILE SIDEBAR -->
+
+    <div class="border text-center px-2 md:hidden">
+        <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
+            <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category B</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package BA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category C</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package CA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
+        </ul>
+    </div>
+</div>
+
 
 <?= $this->endSection(); ?>

@@ -2,8 +2,8 @@
 
 <?= $this->Section('content'); ?>
 <div class="grid grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2">
-    <!-- left -->
-    <div class="border text-right px-2">
+   <!-- left -->
+   <div class="border text-right px-2 max-md:hidden">
         <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
             <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
             <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
@@ -21,6 +21,7 @@
             <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
         </ul>
     </div>
+
 
     <!-- right -->
     <div class="border col-span-2 text-center px-2"><strong>BALI TOUR GUEST TESTIMONY</strong><br>
@@ -56,6 +57,28 @@
                 <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
             </div>
         </div>
-</div></div>
+    </div>
+
+    <!-- MOBILE SIDEBAR -->
+
+    <div class="border text-center px-2 md:hidden">
+        <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
+            <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category B</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package BA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category C</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package CA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
+        </ul>
+    </div>
+</div>
 
 <?= $this->endSection(); ?>

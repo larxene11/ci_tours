@@ -3,10 +3,10 @@
 <?= $this->Section('content'); ?>
 <div class="grid grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2">
     <!-- left -->
-    <div class="border text-right px-2">
+    <div class="border text-right px-2 max-md:hidden">
         <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
             <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
-            <li class="hover:text-gray-900"><a href="#">Package AA</a></li>
+            <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
             <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
             <li class="hover:text-gray-900"><a href="#">Package AC</a></li>
 
@@ -21,6 +21,7 @@
             <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
         </ul>
     </div>
+
 
     <!-- right -->
     <div class="border col-span-2 text-center px-2"><strong>BALI SWING AND UBUD TOUR</strong><br>
@@ -108,9 +109,29 @@
         <textarea id="message" rows="4" class="block p-2.5 w-full text-sm rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Leave a comment..."></textarea>
 
         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-4">Submit</button>
-        </form>
+        </form>    
+    </div>
+    
+    <!-- MOBILE SIDEBAR -->
 
-        
-</div></div>
+    <div class="border text-center px-2 md:hidden">
+        <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
+            <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package AC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category B</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package BA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package BC</a></li>
+
+            <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category C</a></strong></li>
+            <li class="hover:text-gray-900"><a href="#">Package CA</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CB</a></li>
+            <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
+        </ul>
+    </div>
+</div>
 
 <?= $this->endSection(); ?>
