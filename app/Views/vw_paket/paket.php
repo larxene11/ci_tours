@@ -1,71 +1,82 @@
-<div class="w-full mt-12">
-    <p class="text-xl pb-3 flex items-center">
-        <i class="fas fa-list mr-3"></i> Tabel Pesanan
-    </p>
-    <div class="card-header py-3">
-        <a href="<?= base_url('/pesanan/cetak'); ?>" class="btn btn-outline-warning btn-sm mb-2 ml-2"><i class="fas fa-print"></i> Export PDF</a>
-        <a href="<?= base_url('/pesanan/create'); ?>" class="btn btn-outline-info btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
-    </div>
-    <div class="bg-white overflow-auto">
-        <table class="min-w-full bg-white">
-            <thead class="bg-gray-800 text-white">
-                <tr>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Last name</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Phone</th>
-                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
-                </tr>
-            </thead>
-            <tbody class="text-gray-700">
-                <tr>
-                    <td class="w-1/3 text-left py-3 px-4">Lian</td>
-                    <td class="w-1/3 text-left py-3 px-4">Smith</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr class="bg-gray-200">
-                    <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                    <td class="w-1/3 text-left py-3 px-4">Johnson</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr>
-                    <td class="w-1/3 text-left py-3 px-4">Oliver</td>
-                    <td class="w-1/3 text-left py-3 px-4">Williams</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr class="bg-gray-200">
-                    <td class="w-1/3 text-left py-3 px-4">Isabella</td>
-                    <td class="w-1/3 text-left py-3 px-4">Brown</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr>
-                    <td class="w-1/3 text-left py-3 px-4">Lian</td>
-                    <td class="w-1/3 text-left py-3 px-4">Smith</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr class="bg-gray-200">
-                    <td class="w-1/3 text-left py-3 px-4">Emma</td>
-                    <td class="w-1/3 text-left py-3 px-4">Johnson</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr>
-                    <td class="w-1/3 text-left py-3 px-4">Oliver</td>
-                    <td class="w-1/3 text-left py-3 px-4">Williams</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-                <tr class="bg-gray-200">
-                    <td class="w-1/3 text-left py-3 px-4">Isabella</td>
-                    <td class="w-1/3 text-left py-3 px-4">Brown</td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="tel:622322662">622322662</a></td>
-                    <td class="text-left py-3 px-4"><a class="hover:text-blue-500" href="mailto:jonsmith@mail.com">jonsmith@mail.com</a></td>
-                </tr>
-            </tbody>
-        </table>
+<?= $this->extend('backend/index'); ?>
+
+<?= $this->Section('content'); ?>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables Paket</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="<?= base_url('/paket/new'); ?>" class="btn btn-outline-info btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
+            <a href="<?= base_url('/paket/cetak'); ?>" class="btn btn-outline-warning btn-sm mb-2 ml-2"><i class="fas fa-print"></i> Export PDF</a>
+        </div>
+        <?php if (!empty(session()->getFlashdata('message'))) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo session()->getFlashdata('message'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php endif; ?>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kategori Paket</th>
+                            <th>Nama Paket</th>
+                            <th>Detail</th>
+                            <th>Harga Paket</th>
+                            <th>Inclusion & Exclusion</th>
+                            <th>Itienary</th>
+                            <th>Gambar</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <?php
+                    $no = 1;
+                    foreach ($paket as $row) {
+                    ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $row->kategori; ?></td>
+                            <td><?= $row->nama_paket; ?> </td>
+                            <td><?= $row->detail_paket; ?></td>
+                            <td><?= $row->harga_paket; ?> </td>
+                            <td><?= $row->Inclusion; ?> </td>
+                            <td><?= $row->itienary; ?> </td>
+                            <td><?= $row->gambar; ?> </td>
+                            <td>
+                                <a title="Edit" href="<?= base_url("paket/edit/$row->id_pesanan"); ?>" class="btn btn-info">Edit</a>
+                                <a title="Delete" href="<?= base_url("paket/delete/$row->id_pesanan") ?>" class="btn 
+                                            btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    <tfoot>
+                        <th>No</th>
+                        <th>Kategori Paket</th>
+                        <th>Nama Paket</th>
+                        <th>Detail</th>
+                        <th>Harga Paket</th>
+                        <th>Inclusion & Exclusion</th>
+                        <th>Itienary</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
+                    </tfoot>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<?= $this->endSection(); ?>

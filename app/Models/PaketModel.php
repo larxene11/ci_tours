@@ -10,5 +10,5 @@ class PaketModel extends Model
     protected $primaryKey = 'id_paket';
     protected $returnType = 'object';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama_paket', 'detail_paket', 'harga_paket', 'inclusion', 'exclusion'];
+    protected $allowedFields = ['kategori', 'nama_paket', 'detail_paket', 'harga_paket', 'inclusion', 'itienary', 'gambar'];
 }
