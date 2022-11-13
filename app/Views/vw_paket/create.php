@@ -40,7 +40,7 @@
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="inclusion">Inclusion & Exclusion</label>
-                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="inclusion" name="inclusion" type="text" required="" id="inclusion" rows="6" placeholder="Inclusion & Exclusion" value="<?= old('inclusion'); ?>"></textarea>
+                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="inclusion" name="inclusion" type="text" id="inclusion" rows="6" placeholder="Inclusion & Exclusion" value="<?= old('inclusion'); ?>"></textarea>
             </div>
             <div class="mt-2">
                 <label class=" block text-sm text-gray-600" for="itienary">Itienary</label>

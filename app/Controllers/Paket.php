@@ -105,7 +105,7 @@ class Paket extends BaseController
         }
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $dataPaket;
-        return view('/paket/edit', $data);
+        return view('vw_paket/edit', $data);
     }
 
     public function update($id)

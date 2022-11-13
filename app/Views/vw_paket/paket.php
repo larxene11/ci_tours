@@ -45,12 +45,12 @@
                             <td><?= $row->nama_paket; ?> </td>
                             <td><?= $row->detail_paket; ?></td>
                             <td><?= $row->harga_paket; ?> </td>
-                            <td><?= $row->Inclusion; ?> </td>
+                            <td><?= $row->inclusion; ?> </td>
                             <td><?= $row->itienary; ?> </td>
                             <td><?= $row->gambar; ?> </td>
                             <td>
-                                <a title="Edit" href="<?= base_url("paket/edit/$row->id_pesanan"); ?>" class="btn btn-info">Edit</a>
-                                <a title="Delete" href="<?= base_url("paket/delete/$row->id_pesanan") ?>" class="btn 
+                                <a title="Edit" href="<?= base_url("paket/edit/$row->id_paket"); ?>" class="btn btn-info">Edit</a>
+                                <a title="Delete" href="<?= base_url("paket/delete/$row->id_paket") ?>" class="btn 
                                             btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
                             </td>
                         </tr>
