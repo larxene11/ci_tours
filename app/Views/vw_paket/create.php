@@ -20,7 +20,7 @@
          <i class="fas fa-list mr-3"></i> Form Tambah Data Paket
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/store') ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/paket/store') ?>">
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>

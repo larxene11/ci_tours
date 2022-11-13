@@ -37,6 +37,12 @@ class Paket extends BaseController
     public function store()
     {
         if (!$this->validate([
+            'kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
             'nama_paket' => [
                 'rules' => 'required',
                 'errors' => [
@@ -61,7 +67,13 @@ class Paket extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'exclusion' => [
+            'itienary' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'gambar' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Harus diisi'
@@ -72,15 +84,17 @@ class Paket extends BaseController
             return redirect()->back()->withInput();
         }
         $this->paket->insert([
+            'kategori' => $this->request->getVar('kategori'),
             'nama_paket' => $this->request->getVar('nama_paket'),
             'harga_paket' => $this->request->getVar('harga_paket'),
             'detail_paket' => $this->request->getVar('detail_paket'),
             'inclusion' => $this->request->getVar('inclusion'),
-            'exclusion' => $this->request->getVar('exclusion'),
+            'itienary' => $this->request->getVar('itienary'),
+            'gambar' => $this->request->getVar('gambar'),
         ]);
 
         session()->setFlashdata('message', 'Tambah Data Paket Berhasil');
-        return redirect()->to('/paket');
+        return redirect()->to('/data/paket');
     }
 
     public function edit($id)
@@ -91,12 +105,18 @@ class Paket extends BaseController
         }
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $dataPaket;
-        return view('vw_paket/edit', $data);
+        return view('/paket/edit', $data);
     }
 
     public function update($id)
     {
         if (!$this->validate([
+            'kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
             'nama_paket' => [
                 'rules' => 'required',
                 'errors' => [
@@ -121,7 +141,13 @@ class Paket extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'exclusion' => [
+            'itienary' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'gambar' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Harus diisi'
@@ -133,15 +159,17 @@ class Paket extends BaseController
         }
 
         $this->paket->update($id, [
+            'kategori' => $this->request->getVar('kategori'),
             'nama_paket' => $this->request->getVar('nama_paket'),
             'harga_paket' => $this->request->getVar('harga_paket'),
             'detail_paket' => $this->request->getVar('detail_paket'),
             'inclusion' => $this->request->getVar('inclusion'),
-            'exclusion' => $this->request->getVar('exclusion'),
+            'itienary' => $this->request->getVar('itienary'),
+            'gambar' => $this->request->getVar('gambar'),
         ]);
 
         session()->setFlashdata('message', 'Update Data Paket Berhasil');
-        return redirect()->to('/paket');
+        return redirect()->to('/data/paket');
     }
 
     function delete($id)
@@ -153,6 +181,6 @@ class Paket extends BaseController
 
         $this->paket->delete($id);
         session()->setFlashdata('message', 'Delete Data Paket Berhasil');
-        return redirect()->to('/paket');
+        return redirect()->to('/data/paket');
     }
 }
