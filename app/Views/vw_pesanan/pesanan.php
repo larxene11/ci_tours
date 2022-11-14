@@ -2,14 +2,16 @@
 
 <?= $this->Section('content'); ?>
 <!-- Begin Page Content -->
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables Pesanan</h1>
-    <!-- DataTales Example -->
+<div class="w-full mt-6">
+    <p class="text-xl pb-3 flex items-center">
+        <i class="fas fa-list mr-3"></i> Tabel Pesanan
+    </p>
+</div>
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="<?= base_url('/pesanan/new'); ?>" class="btn btn-outline-info btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Data</a>
-            <a href="<?= base_url('/pesanan/cetak'); ?>" class="btn btn-outline-warning btn-sm mb-2 ml-2"><i class="fas fa-print"></i> Export PDF</a>
+            <a href="<?= base_url('/pesanan/new'); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"><i class="fas fa-plus"></i> Tambah Data</a>
+            <a href="<?= base_url('/pesanan/cetak'); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"><i class="fas fa-print"></i> Export PDF</a>
         </div>
         <?php if (!empty(session()->getFlashdata('message'))) : ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -19,63 +21,39 @@
                 </button>
             </div>
         <?php endif; ?>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Customer</th>
-                            <th>Email</th>
-                            <th>Paket Tour</th>
-                            <th>Hotel</th>
-                            <th>Total Biaya</th>
-                            <th>Pesan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <?php
+        <div class="bg-white overflow-auto">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="w-1/8 text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama Customer</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Paket Tour</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nama Hotel</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Pesan</th>
+                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                <?php
                     $no = 1;
                     foreach ($pesanan as $row) {
-                    ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $row->nama; ?></td>
-                            <td><?= $row->email; ?> </td>
-                            <td><?= $row->nama_paket; ?> </td>
-                            <td><?= $row->nama_hotel; ?> </td>
-                            <td>
-                                Rp. <?= $row->total_biaya; ?>
-                            </td>
-                            <td><?= $row->pesan; ?> </td>
-                            <td>
-                                <a title="Edit" href="<?= base_url("pesanan/edit/$row->id_pesanan"); ?>" class="btn btn-info">Edit</a>
-                                <a title="Delete" href="<?= base_url("pesanan/delete/$row->id_pesanan") ?>" class="btn 
-                                            btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a>
-                            </td>
-                        </tr>
+                ?>
+                    <tr>
+                        <td class="w-1/8 text-left py-3 px-4"><?= $no++; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row->nama; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row->email; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row->nama_paket; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row->nama_hotel; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row->pesan; ?></td>
+                        <td class="text-left py-3 px-4"><a title="Edit" href="<?= base_url("pesanan/edit/$row->id_pesanan"); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">Edit</a>
+                                                    <a title="Delete" href="<?= base_url("pesanan/delete/$row->id_pesanan") ?>" class="bg-red-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a></td>
+                    </tr>
                     <?php
-                    }
+                        }
                     ?>
-                    <tfoot>
-                        <th>No</th>
-                        <th>Nama Customer</th>
-                        <th>Email</th>
-                        <th>Paket Tour</th>
-                        <th>Hotel</th>
-                        <th>Total Biaya</th>
-                        <th>Pesan</th>
-                        <th>Aksi</th>
-                    </tfoot>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
+                    
+                </tbody>
+            </table>
         </div>
-    </div>
-</div>
-<!-- /.container-fluid -->
-</div>
-<!-- End of Main Content -->
 <?= $this->endSection(); ?>

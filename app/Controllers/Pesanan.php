@@ -66,7 +66,6 @@ class Pesanan extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'pesan' => [],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
@@ -80,22 +79,22 @@ class Pesanan extends BaseController
         ]);
 
         session()->setFlashdata('message', 'Tambah Data Pesanan Berhasil');
-        return redirect()->to('/pesanan');
+        return redirect()->to('/data/pesanan');
     }
 
     public function edit($id)
     {
         $dataPesanan = $this->pesanan->find($id);
         if (empty($dataPesanan)) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Obat Tidak ditemukan !');
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Pesanan Tidak ditemukan !');
         }
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['pesanan'] = $dataPesanan;
-        $data['paket'] = $this->obat->findAll();
-        return view('tb_pesanan/edit', $data);
+        $data['paket'] = $this->paket->findAll();
+        return view('vw_pesanan/edit', $data);
     }
 
-    public function update($id = null)
+    public function update($id)
     {
         if (!$this->validate([
             'nama' => [
@@ -122,7 +121,6 @@ class Pesanan extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'pesan' => [],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back();
@@ -137,7 +135,7 @@ class Pesanan extends BaseController
         ]);
 
         session()->setFlashdata('message', 'Update Data Pesanan Berhasil');
-        return redirect()->to('/pesanan');
+        return redirect()->to('/data/pesanan');
     }
 
     function delete($id)

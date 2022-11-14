@@ -17,15 +17,15 @@
          <i class="fas fa-list mr-3"></i> Form Ubah Data Paket
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/store') ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/paket/update') ?>">
         <?= csrf_field() ?>
         <div class="mt-2">
             <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>
-            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" required="" id="kategori" value="<?= $paket->kategori; ?>">
+            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" id="kategori" value="<?= $paket->kategori; ?>">
         </div>
         <div class="mt-2">
             <label class="block text-sm text-gray-600" for="nama_paket">Nama Paket</label>
-            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="nama_paket" name="nama_paket" type="text" required="" id="nama_paket" value="<?= $paket->nama_paket; ?>?>">
+            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="nama_paket" name="nama_paket" type="text"  id="nama_paket" value="<?= $paket->nama_paket; ?>">
         </div>
         <div class="mt-2">
             <label class=" block text-sm text-gray-600" for="detail_paket">Detail Paket</label>
@@ -33,19 +33,19 @@
         </div>
         <div class="mt-2">
             <label class=" block text-sm text-gray-600" for="harga_paket">Harga Paket</label>
-            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="harga_paket" name="harga_paket" rows="6" value="<?= $paket->harga_paket; ?>></textarea>
+            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="harga_paket" name="harga_paket" rows="6" value="<?= $paket->harga_paket; ?>"></textarea>
         </div>
         <div class="mt-2">
             <label class="block text-sm text-gray-600" for="inclusion">Inclusion & Exclusion</label>
-            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="inclusion" name="inclusion" type="text" required="" id="inclusion" rows="6" value="<?= $paket->inclusion; ?>></textarea>
+            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="inclusion" name="inclusion" type="text" id="inclusion" rows="6" value="<?= $paket->inclusion; ?>"></textarea>
         </div>
         <div class="mt-2">
             <label class=" block text-sm text-gray-600" for="itienary">Itienary</label>
-            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="itienary" name="itienary" rows="6" value="<?= $paket->itienary; ?>></textarea>
+            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="itienary" name="itienary" rows="6" value="<?= $paket->itienary; ?>"></textarea>
         </div>
         <div class="mt-2">
             <label class=" block text-sm text-gray-600" for="gambar">Gambar</label>
-            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" rows="6" value="<?= $paket->gambar; ?>></textarea>
+            <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" rows="6" value="<?= $paket->gambar; ?>"></textarea>
         </div>
         <div class="mt-6">
             <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Simpan</button>

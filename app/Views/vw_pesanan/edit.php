@@ -17,7 +17,7 @@
          <i class="fas fa-list mr-3"></i> Form Ubah Data Pesanan
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/edit') ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/update') ?>">
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="name">Nama Customer</label>

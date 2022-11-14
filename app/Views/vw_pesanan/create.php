@@ -24,15 +24,15 @@
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="name">Nama Customer</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" required="" id="nama" placeholder="Nama Customer" value="<?= old('nama'); ?>">
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="nama" type="text" id="nama" placeholder="Nama Customer" value="<?= old('nama'); ?>">
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="email">Email</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="" id="email" placeholder="Email Customer" value="<?= old('email'); ?>">
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" placeholder="Email Customer" value="<?= old('email'); ?>">
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="email">Pilih Paket Tour</label>
-                <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"" id="email" name="email" type="text" required="" placeholder="Your Email" aria-label="Email">
+                <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"" id="id_paket" name="id_paket" type="text" placeholder="Your Email" aria-label="Email">
                     <option value="" hidden></option>
                     <?php foreach ($paket as $row) { ?>
                         <option value="<?= $row->id_paket ?>"><?= $row->nama_paket ?></option>
@@ -41,7 +41,7 @@
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="nama_hotel">Nama Hotel</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="nama_hotel" name="nama_hotel" type="text" required="" id="nama_hotel" placeholder="Nama Hotel" value="<?= old('nama_hotel'); ?>">
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="nama_hotel" name="nama_hotel" type="text" placeholder="Nama Hotel" value="<?= old('nama_hotel'); ?>">
             </div>
             <div class="mt-2">
                 <label class=" block text-sm text-gray-600" for="message">Message</label>

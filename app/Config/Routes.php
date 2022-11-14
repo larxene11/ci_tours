@@ -54,16 +54,16 @@ $routes->get('/dashboard', 'Admin::dashboard');
 $routes->get('/data/pesanan', 'Pesanan::index');
 $routes->get('/pesanan/new', 'Pesanan::create');
 $routes->post('/pesanan/create', 'Pesanan::store');
-$routes->get('/pesanan/edit/(:segment)', 'Pesanan::edit/$1');
-$routes->put('/pesanan/update/(:segment)', 'Pesanan::update/$1');
-$routes->delete('/pesanan/delete/(:segment)', 'Pesanan::delete/$1');
+$routes->get('/pesanan/edit/(:num)', 'Pesanan::edit/$1');
+$routes->post('/pesanan/update/(:num)', 'Pesanan::update/$1');
+$routes->delete('/pesanan/delete/(:num)', 'Pesanan::delete/$1');
 
 $routes->get('/data/paket', 'Paket::index');
 $routes->get('/paket/new', 'Paket::create');
 $routes->post('/paket/store', 'Paket::store');
-$routes->get('/paket/edit/(:segment)', 'Paket::edit/$1');
-$routes->post('/paket/update/(:segment)', 'Paket::update/$1');
-$routes->get('/paket/delete/(:segment)', 'Paket::delete/$1');
+$routes->get('/paket/edit/(:num)', 'Paket::edit/$1');
+$routes->post('/paket/update/(:num)', 'Paket::update/$1');
+$routes->delete('/paket/delete/(:num)', 'Paket::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
