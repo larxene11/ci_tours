@@ -44,9 +44,10 @@ class Paket extends BaseController
                 ]
             ],
             'nama_paket' => [
-                'rules' => 'required',
+                'rules' => 'required|is_unique[paket.nama_paket]',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'required' => '{field} Harus diisi',
+                    'is_unique' => '{field} Nama Paket Sudah Terdaftar'
                 ]
             ],
             'harga_paket' => [
@@ -74,15 +75,23 @@ class Paket extends BaseController
                 ]
             ],
             'gambar' => [
-                'rules' => 'required',
+                'rules' => 'uploaded[gambar]|max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'uploaded' => 'Pilih gambar terlebih dahulu',
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
+        //mengambil gambar
+        $fileGambar = $this->request->getFile('gambar');
+        $fileGambar -> move('img');
+        $namaGambar = $fileGambar->getName();
+
         $this->paket->insert([
             'kategori' => $this->request->getVar('kategori'),
             'nama_paket' => $this->request->getVar('nama_paket'),
@@ -90,9 +99,8 @@ class Paket extends BaseController
             'detail_paket' => $this->request->getVar('detail_paket'),
             'inclusion' => $this->request->getVar('inclusion'),
             'itienary' => $this->request->getVar('itienary'),
-            'gambar' => $this->request->getVar('gambar'),
+            'gambar' => $namaGambar
         ]);
-
         session()->setFlashdata('message', 'Tambah Data Paket Berhasil');
         return redirect()->to('/data/paket');
     }

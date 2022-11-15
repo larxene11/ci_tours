@@ -61,9 +61,9 @@ $routes->delete('/pesanan/delete/(:segment)', 'Pesanan::delete/$1');
 $routes->get('/data/paket', 'Paket::index');
 $routes->get('/paket/new', 'Paket::create');
 $routes->post('/paket/store', 'Paket::store');
-$routes->get('/paket/edit/(:segment)', 'Paket::edit/$1');
-$routes->post('/paket/update/(:segment)', 'Paket::update/$1');
-$routes->delete('/paket/delete/(:segment)', 'Paket::delete/$1');
+$routes->get('/paket/edit/(:any)', 'Paket::edit/$1');
+$routes->post('/paket/update/(:any)', 'Paket::update/$1');
+$routes->delete('/paket/delete/(:any)', 'Paket::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

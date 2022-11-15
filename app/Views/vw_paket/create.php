@@ -15,16 +15,20 @@
         </div>
     <?php endif; ?>
 
-<div class="w-full lg:w-full my-6 pr-0 lg:pr-2">
+<div class="w-full lg:w-full my-6 px-2 pr-0 lg:pr-2">
     <p class="text-xl pb-6 flex items-center">
          <i class="fas fa-list mr-3"></i> Form Tambah Data Paket
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/paket/store') ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/paket/store') ?>" enctype="multipart/form-data">
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" required="" id="kategori" placeholder="Kategori Paket" value="<?= old('kategori'); ?>">
+                <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" required="" id="kategori" placeholder="Kategori Paket" value="<?= old('kategori'); ?>">
+                <option value="-">---Pilih Kategori Paket---</option>
+                <option value="Bali Trip Package">Bali Trip Package</option>
+                <option value="Labuan Bajo Trip">Labuan Bajo Trip</option>
+                </select>
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="nama_paket">Nama Paket</label>
@@ -47,8 +51,8 @@
                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="itienary" name="itienary" rows="6" placeholder="Itienary" value="<?= old('itienary'); ?>"></textarea>
             </div>
             <div class="mt-2">
-                <label class=" block text-sm text-gray-600" for="gambar">Gambar</label>
-                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" rows="6" placeholder="Link Gambar" value="<?= old('gambar'); ?>"></textarea>
+                <label class=" block text-sm text-gray-600" for="gambar">Upload file</label>
+                <input class=" px-5 py-2 w-full  text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" type="file">
             </div>
             <div class="mt-6">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Simpan</button>
