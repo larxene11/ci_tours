@@ -186,7 +186,8 @@ class Paket extends BaseController
         if (empty($dataPaket)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data paket tidak ditemukan !');
         }
-
+        
+        unlink('img/' . $dataPaket['gambar']);
         $this->paket->delete($id);
         session()->setFlashdata('message', 'Delete Data Paket Berhasil');
         return redirect()->to('/data/paket');

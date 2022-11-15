@@ -147,6 +147,6 @@ class Pesanan extends BaseController
 
         $this->pesanan->delete($id);
         session()->setFlashdata('message', 'Delete Data Pesanan Berhasil');
-        return redirect()->to('/pesanan');
+        return redirect()->to('/data/pesanan');
     }
 }
