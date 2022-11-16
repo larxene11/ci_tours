@@ -75,9 +75,8 @@ class Paket extends BaseController
                 ]
             ],
             'gambar' => [
-                'rules' => 'uploaded[gambar]|max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
+                'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
                 'errors' => [
-                    'uploaded' => 'Pilih gambar terlebih dahulu',
                     'max_size' => 'Ukuran gambar terlalu besar',
                     'is_image' => 'Yang anda pilih bukan gambar',
                     'mime_in' => 'Yang anda pilih bukan gambar'
@@ -89,8 +88,13 @@ class Paket extends BaseController
         }
         //mengambil gambar
         $fileGambar = $this->request->getFile('gambar');
-        $fileGambar -> move('img');
-        $namaGambar = $fileGambar->getName();
+        if ($fileGambar->getError() == 4){
+            $namaGambar = 'default.jpg';
+        }else{
+            $fileGambar -> move('img');
+            $namaGambar = $fileGambar->getName();
+        }
+        
 
         $this->paket->insert([
             'kategori' => $this->request->getVar('kategori'),
@@ -187,7 +191,10 @@ class Paket extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data paket tidak ditemukan !');
         }
         
-        unlink('img/' . $dataPaket['gambar']);
+        if ($dataPaket['gambar'] != 'default.jpg'){
+            unlink('img/' . $dataPaket['gambar']);
+        }
+        
         $this->paket->delete($id);
         session()->setFlashdata('message', 'Delete Data Paket Berhasil');
         return redirect()->to('/data/paket');

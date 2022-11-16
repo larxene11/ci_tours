@@ -118,7 +118,7 @@
                 }
             }
         });
-
+        
         var chartTwo = document.getElementById('chartTwo');
         var myLineChart = new Chart(chartTwo, {
             type: 'line',
@@ -157,6 +157,21 @@
             }
         });
     </script>
+    <script>
+    function previewImg() {
+        const gambar = document.querySelector('#gambar');
+        const imgPreview = document.querySelector('.img-preview');
+
+
+        const gambarPreview = new FileReader();
+        gambarPreview.readAsDataURL(gambar.files[0]);
+
+        gambarPreview.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+    </script>
+
 </body>
 
 </html>

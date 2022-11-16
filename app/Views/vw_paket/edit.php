@@ -17,7 +17,7 @@
          <i class="fas fa-list mr-3"></i> Form Ubah Data Paket
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="post" action="<?= base_url('/paket/update/'. $paket->id_paket) ?>" value="patch">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="post" action="<?= base_url('/paket/update/'. $paket->id_paket) ?>" enctype="multipart/form-data" value="patch">
         <?= csrf_field() ?>
         <div class="mt-2">
             <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>

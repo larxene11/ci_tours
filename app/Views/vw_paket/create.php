@@ -52,7 +52,12 @@
             </div>
             <div class="mt-2">
                 <label class=" block text-sm text-gray-600" for="gambar">Upload file</label>
-                <input class=" px-5 py-2 w-full  text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" type="file">
+                <div class="flex flex-wrap justify-center">
+                    <div class="w-6/12 sm:w-4/12 py-2 px-4">
+                        <img src="/img/default.jpg" class="max-w-full h-auto px-1 img-preview" />
+                    </div>
+                </div>
+                <input class=" px-5 py-2 w-full text-gray-700 bg-gray-200 rounded" id="gambar" name="gambar" type="file" onchange="previewImg()">
             </div>
             <div class="mt-6">
                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Simpan</button>
