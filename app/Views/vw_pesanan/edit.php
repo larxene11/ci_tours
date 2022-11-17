@@ -17,22 +17,22 @@
          <i class="fas fa-list mr-3"></i> Form Ubah Data Pesanan
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/update/'. $pesanan->id_pesanan) ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/pesanan/update/' . $pesanan['id_pesanan']); ?>"">
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="name">Nama Customer</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="nama" type="text" id="nama" value="<?= $pesanan->nama; ?>">
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="nama" type="text" id="nama" value="<?=$pesanan['nama']; ?>">
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="email">Email</label>
-                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text"  value="<?= $pesanan->email; ?>">
+                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text"  value="<?= $pesanan['email']?>">
             </div>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="email">Pilih Paket Tour</label>
                 <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"" id="id_paket" name="id_paket" type="text" placeholder="Pilih Paket Tour">
                     <option value="" hidden></option>
                     <?php foreach($paket as $row) { ?>
-                    <option value="<?= $row->id_paket ?>" <?= $pesanan->id_paket == $row->id_paket ? "selected" : "";?>><?= $row->nama_paket ?></option>
+                    <option value="<?= $row['id_paket'] ?>" <?= $pesanan['id_paket'] == $row['id_paket'] ? "selected" : "";?>><?= $row['nama_paket'] ?></option>
                     <?php  } ?>
                 </select>
             </div>

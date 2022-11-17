@@ -16,6 +16,6 @@ class PaketModel extends Model
         $builder = $this->db->table('paket');
         $builder->join('kategori', 'kategori.id_kategori = paket.id_kategori');
         $query = $builder->get();
-        return $query->getResult();
+        return $query->getResultArray();
     }
 }

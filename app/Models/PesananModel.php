@@ -8,7 +8,6 @@ class PesananModel extends Model
 {
     protected $table = 'pesanan';
     protected $primaryKey = 'id_pesanan';
-    protected $returnType = 'object';
     protected $useTimestamps = false;
     protected $allowedFields = ['nama', 'email', 'id_paket', 'nama_hotel', 'pesan'];
 
@@ -17,6 +16,6 @@ class PesananModel extends Model
         $builder = $this->db->table('pesanan');
         $builder->join('paket', 'paket.id_paket = pesanan.id_paket');
         $query = $builder->get();
-        return $query->getResult();
+        return $query->getResultArray();
     }
 }

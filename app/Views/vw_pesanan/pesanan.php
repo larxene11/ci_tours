@@ -41,13 +41,13 @@
                 ?>
                     <tr>
                         <td class="w-1/8 text-left py-3 px-4"><?= $no++; ?></td>
-                        <td class="text-left py-3 px-4"><?= $row->nama; ?></td>
-                        <td class="text-left py-3 px-4"><?= $row->email; ?></td>
-                        <td class="text-left py-3 px-4"><?= $row->nama_paket; ?></td>
-                        <td class="text-left py-3 px-4"><?= $row->nama_hotel; ?></td>
-                        <td class="text-left py-3 px-4"><?= $row->pesan; ?></td>
-                        <td class="text-left py-3 px-4"><a title="Edit" href="<?= base_url("pesanan/edit/$row->id_pesanan"); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">Edit</a>
-                                                    <a title="Delete" href="<?= base_url("pesanan/delete/$row->id_pesanan") ?>" class="bg-red-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a></td>
+                        <td class="text-left py-3 px-4"><?= $row['nama']; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row['email']; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row['nama_paket']; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row['nama_hotel']; ?></td>
+                        <td class="text-left py-3 px-4"><?= $row['pesan']; ?></td>
+                        <td class="text-left py-3 px-4"><a title="Edit" href="<?= base_url("pesanan/edit/" . $row['id_pesanan']); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">Edit</a>
+                                                    <a title="Delete" href="<?= base_url("pesanan/delete/" . $row['id_pesanan']); ?>" class="bg-red-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a></td>
                     </tr>
                     <?php
                         }

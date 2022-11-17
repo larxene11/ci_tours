@@ -35,7 +35,7 @@
                 <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"" id="id_paket" name="id_paket" type="text" placeholder="Your Email" aria-label="Email">
                     <option value="" hidden></option>
                     <?php foreach ($paket as $row) { ?>
-                        <option value="<?= $row->id_paket ?>"><?= $row->nama_paket ?></option>
+                        <option value="<?= $row['id_paket'] ?>"><?= $row['nama_paket'] ?></option>
                     <?php  } ?>
                 </select>
             </div>
