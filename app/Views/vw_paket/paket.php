@@ -38,10 +38,10 @@
                 ?>
                     <tr>
                         <td class="w-1/8 text-left py-3 px-4"><?= $no++; ?></td>
-                        <td class="w-1/4 text-left py-3 px-4"><?= $row->kategori; ?></td>
-                        <td class="w-1/4 text-left py-3 px-4"><?= $row->nama_paket; ?></td>
-                        <td class="w-1/4 text-left py-3 px-4"><a title="Edit" href="<?= base_url("/paket/edit/$row->id_paket"); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">Edit</a>
-                                                    <a title="Delete" href="<?= base_url("/paket/delete/$row->id_paket") ?>" class="bg-red-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a></td>
+                        <td class="w-1/4 text-left py-3 px-4"><?= $row['kategori']; ?></td>
+                        <td class="w-1/4 text-left py-3 px-4"><?= $row['nama_paket']; ?></td>
+                        <td class="w-1/4 text-left py-3 px-4"><a title="Edit" href="<?= base_url("/paket/edit/".$row['id_paket']); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">Edit</a>
+                                                    <a title="Delete" href="<?= base_url("/paket/delete/".$row['id_paket']); ?>" class="bg-red-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Delete</a></td>
                     </tr>
                     <?php
                         }

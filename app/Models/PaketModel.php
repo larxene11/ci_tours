@@ -8,7 +8,6 @@ class PaketModel extends Model
 {
     protected $table = 'paket';
     protected $primaryKey = 'id_paket';
-    protected $returnType = 'object';
     protected $useTimestamps = false;
     protected $allowedFields = ['kategori', 'nama_paket', 'detail_paket', 'harga_paket', 'inclusion', 'itienary', 'gambar'];
 }
