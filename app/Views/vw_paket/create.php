@@ -24,10 +24,11 @@
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>
-                <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" required="" id="kategori" placeholder="Kategori Paket" value="<?= old('kategori'); ?>">
-                <option value="-">---Pilih Kategori Paket---</option>
-                <option value="Bali Trip Package">Bali Trip Package</option>
-                <option value="Labuan Bajo Trip">Labuan Bajo Trip</option>
+                <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="id_kategori" name="id_kategori" type="text"  placeholder="Kategori Paket">
+                <option value="" hidden></option>
+                    <?php foreach ($kategori as $row) { ?>
+                        <option value="<?= $row['id_kategori'] ?>"><?= $row['nama_kategori'] ?></option>
+                    <?php  } ?>
                 </select>
             </div>
             <div class="mt-2">

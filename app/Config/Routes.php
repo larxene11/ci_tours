@@ -64,6 +64,14 @@ $routes->post('/paket/store', 'Paket::store');
 $routes->get('/paket/edit/(:segment)', 'Paket::edit/$1');
 $routes->post('/paket/update/(:segment)', 'Paket::update/$1');
 $routes->get('/paket/delete/(:segment)', 'Paket::delete/$1');
+
+$routes->get('/data/kategori', 'Kategori::index');
+$routes->get('/kategori/new', 'Kategori::create');
+$routes->post('/kategori/store', 'Kategori::store');
+$routes->get('/kategori/edit/(:segment)', 'Kategori::edit/$1');
+$routes->post('/kategori/update/(:segment)', 'Kategori::update/$1');
+$routes->get('/kategori/delete/(:segment)', 'Kategori::delete/$1');
+/*
 /*
  * --------------------------------------------------------------------
  * Additional Routing

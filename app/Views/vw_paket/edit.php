@@ -23,8 +23,13 @@
         <input type="hidden" name="judulLama" value="<?= $paket['nama_paket']; ?>">
 
         <div class="mt-2">
-            <label class="block text-sm text-gray-600" for="kategori">Kategori Paket</label>
-            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="kategori" name="kategori" type="text" id="kategori" value="<?= $paket['kategori']; ?>">
+            <label class="block text-sm text-gray-600" for="id_kategori">Kategori Paket</label>
+            <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="id_kategori" name="id_kategori" type="text">
+                <option value="" hidden></option>
+                    <?php foreach($kategori as $row) { ?>
+                    <option value="<?= $row->id_kategori ?>" <?= $paket->id_kategori == $row->id_kategori ? "selected" : "";?>><?= $row->nama_kategori ?></option>
+                    <?php  } ?>
+            </select>
         </div>
         <div class="mt-2">
             <label class="block text-sm text-gray-600" for="nama_paket">Nama Paket</label>

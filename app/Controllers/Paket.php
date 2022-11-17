@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PaketModel;
 use App\Models\AdminModel;
+use App\Models\KategoriModel;
 
 class Paket extends BaseController
 {
@@ -12,32 +13,34 @@ class Paket extends BaseController
         $this->session = session();
         $this->admin = new AdminModel();
         $this->paket = new PaketModel();
+        $this->kategori = new KategoriModel();
     }
 
     public function index()
     {
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
-        $data['paket'] = $this->paket->findAll();
+        $data['paket'] = $this->paket->getAll();
         return view('vw_paket/paket', $data);
     }
 
     public function cetak()
     {
 
-        $data['paket'] = $this->paket->findAll();
+        $data['paket'] = $this->paket->getAll();
         return view('vw_paket/cetak', $data);
     }
 
     public function create()
     {
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
+        $data['kategori'] = $this->kategori->findAll();
         return view('vw_paket/create', $data);
     }
 
     public function store()
     {
         if (!$this->validate([
-            'kategori' => [
+            'id_kategori' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Harus diisi'
@@ -97,7 +100,7 @@ class Paket extends BaseController
         
 
         $this->paket->insert([
-            'kategori' => $this->request->getVar('kategori'),
+            'id_kategori' => $this->request->getVar('id_kategori'),
             'nama_paket' => $this->request->getVar('nama_paket'),
             'harga_paket' => $this->request->getVar('harga_paket'),
             'detail_paket' => $this->request->getVar('detail_paket'),
@@ -117,6 +120,7 @@ class Paket extends BaseController
         }
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $dataPaket;
+        $data['kategori'] = $this->kategori->findAll();
         return view('vw_paket/edit', $data);
     }
 
@@ -129,7 +133,7 @@ class Paket extends BaseController
             $rule_judul = 'required|is_unique[paket.nama_paket]';
         }
         if (!$this->validate([
-            'kategori' => [
+            'id_kategori' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Harus diisi'
@@ -189,7 +193,7 @@ class Paket extends BaseController
         }
 
         $this->paket->update($id, [
-            'kategori' => $this->request->getVar('kategori'),
+            'id_kategori' => $this->request->getVar('id_kategori'),
             'nama_paket' => $this->request->getVar('nama_paket'),
             'harga_paket' => $this->request->getVar('harga_paket'),
             'detail_paket' => $this->request->getVar('detail_paket'),

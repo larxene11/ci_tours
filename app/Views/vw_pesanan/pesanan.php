@@ -2,14 +2,14 @@
 
 <?= $this->Section('content'); ?>
 <!-- Begin Page Content -->
-<div class="w-full mt-6">
-    <p class="text-xl pb-3 flex items-center">
+<div class="w-full py-1 mt-6">
+    <p class="text-xl px-1 pb-3 flex items-center">
         <i class="fas fa-list mr-3"></i> Tabel Pesanan
     </p>
 </div>
 
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        <div class="card-header px-1 py-3">
             <a href="<?= base_url('/pesanan/new'); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"><i class="fas fa-plus"></i> Tambah Data</a>
             <a href="<?= base_url('/pesanan/cetak'); ?>" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"><i class="fas fa-print"></i> Export PDF</a>
         </div>
@@ -21,7 +21,7 @@
                 </button>
             </div>
         <?php endif; ?>
-        <div class="bg-white overflow-auto">
+        <div class="bg-white px-1 overflow-auto">
             <table class="min-w-full bg-white">
                 <thead class="bg-gray-800 text-white">
                     <tr>

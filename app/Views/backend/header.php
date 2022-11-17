@@ -36,9 +36,9 @@
             <i class="fas fa-table mr-3"></i>
             Pesanan
         </a>
-        <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+        <a href="/data/kategori" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-table mr-3"></i>
-            Tempat
+            Kategori
         </a>
         <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-calendar mr-3"></i>
