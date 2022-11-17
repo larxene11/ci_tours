@@ -122,6 +122,12 @@ class Paket extends BaseController
 
     public function update($id)
     {
+        $paketLama = $this->request->getVar('judulLama');
+        if ($paketLama == $this->request->getVar('nama_paket')){
+            $rule_judul = 'required';
+        }else{
+            $rule_judul = 'required|is_unique[paket.nama_paket]';
+        }
         if (!$this->validate([
             'kategori' => [
                 'rules' => 'required',
@@ -130,9 +136,10 @@ class Paket extends BaseController
                 ]
             ],
             'nama_paket' => [
-                'rules' => 'required',
+                'rules' => $rule_judul,
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'required' => '{field} Harus diisi',
+                    'is_unique' => '{field} Nama Paket Sudah Terdaftar'
                 ]
             ],
             'harga_paket' => [
@@ -160,14 +167,25 @@ class Paket extends BaseController
                 ]
             ],
             'gambar' => [
-                'rules' => 'required',
+                'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
             ],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back();
+        }
+
+        $fileGambar = $this->request->getFile('gambar');
+        if ($fileGambar->getError() == 4){
+            $namaGambar = $this->request->getVar('gambarLama');
+        }else{
+            $namaGambar = $fileGambar->getName();
+            $fileGambar -> move('img', $namaGambar);
+            unlink('img/' . $this->request->getVar('gambarLama'));
         }
 
         $this->paket->update($id, [
@@ -177,7 +195,7 @@ class Paket extends BaseController
             'detail_paket' => $this->request->getVar('detail_paket'),
             'inclusion' => $this->request->getVar('inclusion'),
             'itienary' => $this->request->getVar('itienary'),
-            'gambar' => $this->request->getVar('gambar'),
+            'gambar' => $namaGambar
         ]);
 
         session()->setFlashdata('message', 'Update Data Paket Berhasil');
