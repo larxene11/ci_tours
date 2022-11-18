@@ -27,7 +27,7 @@
             <select class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="id_kategori" name="id_kategori" type="text">
                 <option value="" hidden></option>
                     <?php foreach($kategori as $row) { ?>
-                    <option value="<?= $row->id_kategori ?>" <?= $paket->id_kategori == $row->id_kategori ? "selected" : "";?>><?= $row->nama_kategori ?></option>
+                    <option value="<?= $row['id_kategori'] ?>" <?= $paket['id_kategori'] == $row['id_kategori'] ? "selected" : "";?>><?= $row['nama_kategori'] ?></option>
                     <?php  } ?>
             </select>
         </div>

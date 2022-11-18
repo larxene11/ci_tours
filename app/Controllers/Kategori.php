@@ -17,6 +17,14 @@ class Kategori extends BaseController
 
     public function index()
     {
+        $data['judul'] = 'Bali Tours | Kategori';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => 'active-nav-link',
+            'paket' => '',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['kategori'] = $this->kategori->findAll();
         return view('vw_kategori/kategori', $data);
@@ -25,6 +33,13 @@ class Kategori extends BaseController
 
     public function create()
     {
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => 'active-nav-link',
+            'paket' => '',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         return view('vw_kategori/create', $data);
     }
@@ -53,6 +68,13 @@ class Kategori extends BaseController
 
     public function edit($id)
     {
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => 'active',
+            'paket' => '',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $dataKategori = $this->kategori->find($id);
         if (empty($dataKategori)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Kategori Tidak ditemukan !');
