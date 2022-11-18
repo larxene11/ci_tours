@@ -24,70 +24,33 @@
 
 
     <!-- right -->
-    <div class="border col-span-2 text-center px-2"><strong>BALI SWING AND UBUD TOUR</strong><br>
-        <strong>BALI SWING AND UBUD TOUR IS ONE OF THE MOST POPULAR BALI COMBINATION TOURS TO ENJOY SWING ACTIVITY IN BONGKASA VILLAGE COMBINE WITH VISITING PLACES OF INTEREST IN UBUD VILLAGE</strong><br>
-        <div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales. Aliquam semper nisi tincidunt rhoncus egestas. Integer ut cursus mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis massa purus, molestie tempor facilisis quis, iaculis in nisi. Donec placerat felis ac elit ultrices, nec ornare risus rhoncus. Fusce viverra quam eget erat finibus, eu tempus augue cursus. Proin sem leo, eleifend fringilla fringilla id, feugiat eget ex. Proin id lorem nec eros iaculis gravida. Morbi interdum libero nisl, eu dictum ligula efficitur eu. Morbi sit amet elit justo. Praesent feugiat ultrices est nec facilisis. Nullam nec tincidunt nulla, eu finibus augue. In at pellentesque quam. Curabitur varius, arcu at blandit blandit, nulla arcu interdum lectus, in cursus arcu sem at tortor. Phasellus tristique neque quam, vel dapibus tellus consectetur sed.
-            Vestibulum lacus velit, consectetur a laoreet sit amet, iaculis commodo libero. In commodo aliquam enim eu venenatis. Nulla vitae magna pretium, lacinia est vel, ornare purus. In commodo vestibulum tincidunt. Maecenas eu urna lacus. Etiam nibh diam, suscipit id imperdiet sit amet, condimentum vitae odio. Curabitur at feugiat ex. Sed vel dui vel mauris tristique dignissim eu eget mauris. Phasellus justo turpis, finibus id eros eget, porttitor malesuada tellus. Integer non metus arcu. Nullam porta vestibulum enim, nec fermentum lorem tincidunt eget. Duis at nisi diam.
-            Sed porttitor eu metus vitae sodales. Proin consequat lectus sed pretium porta. Vestibulum facilisis tincidunt ullamcorper. Aliquam nec lacinia elit. Sed elementum tellus vitae orci tincidunt, ac posuere libero consequat. Sed pellentesque quis leo eget dignissim. Etiam eget ante sed mi rhoncus efficitur ac a lectus. Etiam quis turpis et lorem accumsan iaculis. Vestibulum tincidunt magna libero. Phasellus finibus turpis faucibus tortor suscipit, et vehicula odio molestie. Mauris sit amet mollis ex, ac faucibus quam. Duis eget tincidunt odio. <br><br>
+    <div class="border col-span-2 text-center px-2"><strong><?= $paket['nama_paket'] ?></strong><br>
+        <div class="text-justify">
+            <?= $paket['detail_paket'] ?>
+            <br><br>
         </div>
         <div class="">
-            <img class="" src="/dummyimage.jpg">
+            <img class="" src="/img/<?= $paket['gambar']; ?>">
         </div>
         <div class="text-justify">
             <strong>Itinerary</strong>
-            <ul>
-                <li>08.00 - Pick up from your hotel</li>
-
-                <li>09.30 - Bali Swing Activity</li>
-
-                <li>12.00 - Lunch at Bali Swing Restaurant</li>
-
-                <li>14.00 - Visit Ubud Monkey Forest</li>
-
-                <li>15.00 - Visit Ubud Palace</li>
-
-                <li>15.30 - Visit Ubud Art Market</li>
-
-                <li>16.30 - Visit Tegalalang Rice Terrace</li>
-
-                <li>17.30 - Back to your hotel</li>
-            </ul>
+            <?= $paket['itienary'] ?>
         </div>
         <br>
-        <strong>Bali Swing and Ubud Tour Price and Inclusion :</strong>
-        <p>BALI SWING AND UBUD TOUR</p><br>
+        <strong><?= $paket['nama_paket'] ?> Price and Inclusion :</strong>
+        <p><?= $paket['nama_paket'] ?></p><br>
         <div class="text-justify">
-        <p>Price : </p>
-        <ul>
-            <li>• Adult : IDR 750,000</li>
-            <li>• Children : IDR 650,000</li>
-            <li>• Price are quoted per person for minimum booking is 2 person</li>
-        </ul>
-        <br>
-        <p>Price Include :</p>
-        <ul>
-            <li>• Private Transport with Fully Air-Conditioning Car</li>
-            <li>• Professional English Speaking Driver</li>
-            <li>• Bali Swing Activity</li>
-            <li>• All Safety Standard Equipment</li>
-            <li>• All Entrance Ticket</li>
-            <li>• Indonesian Buffet Lunch and Mineral Water</li>
-            <li>• Bali Swing Insurance</li>
-            <li>• 21% Government Tax and Service</li>
-        </ul>
-        <br>
-        <p>What To Bring :</p>
-        <ul>
-            <li>• Modest Clothes, Camera, Sun Glasses, Sun Screen</li>
-        </ul>
-
-        <p>Hotel area for pick up and drop off :</p>
-        <ul>
-            <li>• Ubud, Gianyar, Denpasar, Kuta, Legian, Seminyak, Canggu, Kerobokan, Tuban, Sanur, Jimbaran, Ungasan, Uluwatu, Pecatu, Tanjung Benoa, Nusa Dua</li>
-        </ul>
+            <?= $paket['harga_paket'] ?>
         </div>
 
-        <form>
+        <!-- BOOKING FORM -->
+
+        <div class="text-left">
+        <div class="mt-5 font-bold">
+            <p>Booking Form</p>
+        </div>
+            <p>Please complete the form below for general inquiries of your tour or activity</p>
+        <form class="mt-4">
         <div class="mb-1">
             <label for="name" class="block mb-2 text-sm font-medium">Your name</label>
             <input type="name" id="name" class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="your name" required="">
@@ -110,6 +73,7 @@
 
         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-4">Submit</button>
         </form>    
+        </div>
     </div>
     
     <!-- MOBILE SIDEBAR -->

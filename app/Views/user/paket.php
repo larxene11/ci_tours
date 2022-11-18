@@ -3,8 +3,8 @@
 <?= $this->Section('content'); ?>
 <div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
     <!-- left -->
-    <div class="border text-right px-2 max-md:hidden">
-        <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
+    <div class="border text-right max-md:hidden">
+        <!-- <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
             <li class="py-2 hover:text-gray-900 bg-gray-200"><strong><a href="#">Category A</a></strong></li>
             <li class="hover:text-gray-900"><a href="<?= base_url('detail') ?>">Package AA</a></li>
             <li class="hover:text-gray-900"><a href="#">Package AB</a></li>
@@ -19,7 +19,37 @@
             <li class="hover:text-gray-900"><a href="#">Package CA</a></li>
             <li class="hover:text-gray-900"><a href="#">Package CB</a></li>
             <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
-        </ul>
+        </ul> -->
+        <div class="table-responsive">
+            <table class="w-full text-sm text-right">
+            <?php
+                    $no = 1;
+                    foreach ($kategori as $row) {
+                ?>
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <td class="py-3 px-4"><?= $row['nama_kategori']; ?></td>
+                            <div>
+                                <?php
+                                    foreach ($paket as $item){
+                                ?>
+                                <div>
+                                <?php if($item['nama_kategori'] == $row['nama_kategori']): ?>
+                                    <?= $item['nama_paket']; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </tr>
+                    </thead>
+                    <!-- <tr>
+                        <td class="py-3 px-4"><?= $item['nama_paket']; ?></td>
+                    </tr> -->
+                    <?php
+                        }
+                    ?>
+            </table>
+        </div>
     </div>
 
     <!-- right -->
