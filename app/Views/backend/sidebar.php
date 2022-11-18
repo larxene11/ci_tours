@@ -19,7 +19,7 @@
             <i class="fas fa-table mr-3"></i>
             Pesanan
         </a>
-        <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item <?= $menu['kalender']; ?>">
+        <a href="/kalender" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item <?= $menu['kalender']; ?>">
             <i class="fas fa-calendar mr-3"></i>
             Kalender
         </a>

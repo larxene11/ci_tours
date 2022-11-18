@@ -55,6 +55,7 @@ class Admin extends BaseController
             'pesanan' => '',
             'kalender' => 'active-nav-link'
         ];
-        return view('admin/kalender');
+        $data['admin'] = $this->admin->getAdmin(session()->get('username'));
+        return view('admin/kalender', $data);
     }
 }
