@@ -19,6 +19,14 @@ class Pesanan extends BaseController
 
     public function index()
     {
+        $data['judul'] = 'Bali Tours | Pesanan';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => '',
+            'pesanan' => 'active-nav-link',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['pesanan'] = $this->pesanan->getAll();
         return view('vw_pesanan/pesanan', $data);
@@ -34,6 +42,14 @@ class Pesanan extends BaseController
 
     public function create()
     {
+        $data['judul'] = 'Bali Tours | Tambah Data Pesanan';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => '',
+            'pesanan' => 'active-nav-link',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $this->paket->findAll();
         return view('vw_pesanan/create', $data);
@@ -88,6 +104,14 @@ class Pesanan extends BaseController
         if (empty($dataPesanan)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Pesanan Tidak ditemukan !');
         }
+        $data['judul'] = 'Bali Tours | Edit Data Pesanan';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => '',
+            'pesanan' => 'active-nav-link',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['pesanan'] = $dataPesanan;
         $data['paket'] = $this->paket->findAll();

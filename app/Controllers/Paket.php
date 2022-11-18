@@ -18,6 +18,14 @@ class Paket extends BaseController
 
     public function index()
     {
+        $data['judul'] = 'Bali Tours | Paket';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => 'active-nav-link',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $this->paket->getAll();
         return view('vw_paket/paket', $data);
@@ -32,6 +40,14 @@ class Paket extends BaseController
 
     public function create()
     {
+        $data['judul'] = 'Bali Tours | Tambah Data Paket';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => 'active-nav-link',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['kategori'] = $this->kategori->findAll();
         return view('vw_paket/create', $data);
@@ -118,6 +134,14 @@ class Paket extends BaseController
         if (empty($dataPaket)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Paket Tidak ditemukan !');
         }
+        $data['judul'] = 'Bali Tours | Edit Data Paket';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => 'active-nav-link',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['paket'] = $dataPaket;
         $data['kategori'] = $this->kategori->findAll();

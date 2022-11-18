@@ -44,4 +44,17 @@ class Admin extends BaseController
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         return view('admin/dashboard', $data);
     }
+    
+    public function kalender()
+    {
+        $data['judul'] = 'Bali Tours | Kalender';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => '',
+            'paket' => '',
+            'pesanan' => '',
+            'kalender' => 'active-nav-link'
+        ];
+        return view('admin/kalender');
+    }
 }

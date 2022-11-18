@@ -33,6 +33,7 @@ class Kategori extends BaseController
 
     public function create()
     {
+        $data['judul'] = 'Bali Tours | Tambah Data Kategori';
         $data['menu'] = [
             'dashboard' => '',
             'kategori' => 'active-nav-link',
@@ -68,17 +69,18 @@ class Kategori extends BaseController
 
     public function edit($id)
     {
-        $data['menu'] = [
-            'dashboard' => '',
-            'kategori' => 'active',
-            'paket' => '',
-            'pesanan' => '',
-            'kalender' => ''
-        ];
         $dataKategori = $this->kategori->find($id);
         if (empty($dataKategori)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Kategori Tidak ditemukan !');
         }
+        $data['judul'] = 'Bali Tours | Edit Data Kategori';
+        $data['menu'] = [
+            'dashboard' => '',
+            'kategori' => 'active-nav-link',
+            'paket' => '',
+            'pesanan' => '',
+            'kalender' => ''
+        ];
         $data['admin'] = $this->admin->getAdmin(session()->get('username'));
         $data['kategori'] = $dataKategori;;
         return view('vw_kategori/edit', $data);
