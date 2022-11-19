@@ -10,7 +10,7 @@ class LoginFilters implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(!session('id_admin')){
+        if(!session('isLogin')){
             return redirect()->to('/admin');
         }
     }

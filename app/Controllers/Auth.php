@@ -26,6 +26,9 @@ class Auth extends BaseController
 
     public function login()
     {
+        if(session('id_admin')){
+            return redirect()->to(site_url('dashboard'));
+        }
 
         return view('auth/login');
     }
@@ -94,7 +97,7 @@ class Auth extends BaseController
         } else {
             //jika username tidak ditemukan, balikkan ke halaman login
             session()->setFlashdata('username', 'Username tidak ditemukan');
-            return redirect()->to(site_url('auth/login'));
+            return redirect()->to(site_url('/login'));
         }
     }
 
