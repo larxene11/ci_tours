@@ -37,21 +37,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/test', function(){
-    return dd(session('isLogin'));
-});
 $routes->get('/detail', 'home::detail');
 $routes->get('/about', 'home::about');
 $routes->get('/contact', 'home::contact');
 $routes->get('/testimony', 'home::testimony');
-
-<<<<<<< HEAD
-$routes->get('/admin', 'Auth::index');
-=======
 $routes->get('/detail/(:segment)', 'home::detail/$1');
 
 $routes->get('/admin', 'Auth::login');
->>>>>>> 7d91bdd0a248144a478397d9dd685be5f098a1bc
 $routes->get('/login', 'Auth::login');
 $routes->get('/register', 'Auth::register');
 $routes->post('/login/process', 'Auth::valid_login');
