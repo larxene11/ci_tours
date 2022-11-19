@@ -1,4 +1,4 @@
-<?= $this->extend('backend/index'); ?>
+ <?= $this->extend('backend/index'); ?>
 
 <?= $this->Section('content'); ?>
 <!-- Begin Page Content -->

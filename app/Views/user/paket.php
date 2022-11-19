@@ -26,7 +26,7 @@
                 foreach ($kategori as $row) {
             ?>
                     <div class="font-bold uppercase bg-gray-50 py-2 px-3">
-                        <?= $row['nama_kategori']; ?>
+                        <a><?= $row['nama_kategori']; ?></a>
                     </div>
                     
                     <div >
@@ -35,7 +35,9 @@
                         ?>
                             <div class="py-1 px-3">
                                 <?php if($item['id_kategori'] == $row['id_kategori']): ?>
-                                    <?= $item['nama_paket']; ?>
+                                    <a href="<?= base_url("/detail/".$item['id_paket']); ?>">
+                                        <?= $item['nama_paket']; ?>
+                                    </a>
                                     <hr class="mt-1">
                                 <?php endif; ?>
                             </div>
