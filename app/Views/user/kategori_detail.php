@@ -3,7 +3,7 @@
 <?= $this->Section('content'); ?>
 <div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
     <!-- left -->
-    <div class="border text-right max-md:hidden">
+    <div class="border text-right px-2 max-md:hidden">
         <div class="w-full text-sm text-right">
             <?php
                 $no = 1;
@@ -12,7 +12,7 @@
                     <div class="font-bold uppercase bg-gray-50 py-2 px-3">
                         <a href="<?= base_url("/detail/kategori/".$row['id_kategori']); ?>">
                             <?= $row['nama_kategori']; ?>
-                        </a>   
+                        </a>
                     </div>
                     
                     <div >
@@ -35,24 +35,15 @@
         </div>
     </div>
 
+
     <!-- right -->
-    <div class="border col-span-2 text-center px-2"><strong>ABOUT BALI TOUR AGENCY</strong><br>
-        <strong>Best Bali Tour on-line where we can arrange Bali Day Tours, Bali Trip Packages, Bali Adventure Tours with Tour Guide and Driver</strong><br>
-        <div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales. Aliquam semper nisi tincidunt rhoncus egestas. Integer ut cursus mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis massa purus, molestie tempor facilisis quis, iaculis in nisi. Donec placerat felis ac elit ultrices, nec ornare risus rhoncus. Fusce viverra quam eget erat finibus, eu tempus augue cursus. Proin sem leo, eleifend fringilla fringilla id, feugiat eget ex. Proin id lorem nec eros iaculis gravida. Morbi interdum libero nisl, eu dictum ligula efficitur eu. Morbi sit amet elit justo. Praesent feugiat ultrices est nec facilisis. Nullam nec tincidunt nulla, eu finibus augue. In at pellentesque quam. Curabitur varius, arcu at blandit blandit, nulla arcu interdum lectus, in cursus arcu sem at tortor. Phasellus tristique neque quam, vel dapibus tellus consectetur sed.
-            Vestibulum lacus velit, consectetur a laoreet sit amet, iaculis commodo libero. In commodo aliquam enim eu venenatis. Nulla vitae magna pretium, lacinia est vel, ornare purus. In commodo vestibulum tincidunt. Maecenas eu urna lacus. Etiam nibh diam, suscipit id imperdiet sit amet, condimentum vitae odio. Curabitur at feugiat ex. Sed vel dui vel mauris tristique dignissim eu eget mauris. Phasellus justo turpis, finibus id eros eget, porttitor malesuada tellus. Integer non metus arcu. Nullam porta vestibulum enim, nec fermentum lorem tincidunt eget. Duis at nisi diam.
-            Sed porttitor eu metus vitae sodales. Proin consequat lectus sed pretium porta. Vestibulum facilisis tincidunt ullamcorper. Aliquam nec lacinia elit. Sed elementum tellus vitae orci tincidunt, ac posuere libero consequat. Sed pellentesque quis leo eget dignissim. Etiam eget ante sed mi rhoncus efficitur ac a lectus. Etiam quis turpis et lorem accumsan iaculis. Vestibulum tincidunt magna libero. Phasellus finibus turpis faucibus tortor suscipit, et vehicula odio molestie. Mauris sit amet mollis ex, ac faucibus quam. Duis eget tincidunt odio. <br><br>
+    <div class="border col-span-2 text-center px-2"><strong><?= $kategori2['nama_kategori'] ?></strong><br>
+        <div class="text-justify">
+            <?= $kategori2['detail_kategori'] ?>
+            <br><br>
         </div>
-
         <div class="">
-            <img class="" src="/dummyimage.jpg">
-        </div>
-
-        <div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales. Aliquam semper nisi tincidunt rhoncus egestas. Integer ut cursus mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis massa purus, molestie tempor facilisis quis, iaculis in nisi. Donec placerat felis ac elit ultrices, nec ornare risus rhoncus. Fusce viverra quam eget erat finibus, eu tempus augue cursus. Proin sem leo, eleifend fringilla fringilla id, feugiat eget ex. Proin id lorem nec eros iaculis gravida. Morbi interdum libero nisl, eu dictum ligula efficitur eu. Morbi sit amet elit justo. Praesent feugiat ultrices est nec facilisis. Nullam nec tincidunt nulla, eu finibus augue. In at pellentesque quam. Curabitur varius, arcu at blandit blandit, nulla arcu interdum lectus, in cursus arcu sem at tortor. Phasellus tristique neque quam, vel dapibus tellus consectetur sed.
-            Vestibulum lacus velit, consectetur a laoreet sit amet, iaculis commodo libero. In commodo aliquam enim eu venenatis. Nulla vitae magna pretium, lacinia est vel, ornare purus. In commodo vestibulum tincidunt. Maecenas eu urna lacus. Etiam nibh diam, suscipit id imperdiet sit amet, condimentum vitae odio. Curabitur at feugiat ex. Sed vel dui vel mauris tristique dignissim eu eget mauris. Phasellus justo turpis, finibus id eros eget, porttitor malesuada tellus. Integer non metus arcu. Nullam porta vestibulum enim, nec fermentum lorem tincidunt eget. Duis at nisi diam.
-            <br>
-            Phone : 081333222444<br>
-            Email : you@example.com<br>
-            <br>
+            <img class="" src="/img/<?= $kategori2['gambar_kategori']; ?>">
         </div>
 
         <!-- BOOKING FORM -->
@@ -93,11 +84,11 @@
         </form>    
         </div>
     </div>
-
+    
     <!-- MOBILE SIDEBAR -->
 
     <div class="border text-center px-2 md:hidden">
-        <div class="w-full text-sm text-center">
+    <div class="w-full text-sm text-center">
             <?php
                 $no = 1;
                 foreach ($kategori as $row) {
@@ -105,7 +96,7 @@
                     <div class="font-bold uppercase bg-gray-50 py-2 px-3">
                         <a href="<?= base_url("/detail/kategori/".$row['id_kategori']); ?>">
                             <?= $row['nama_kategori']; ?>
-                        </a>   
+                        </a>
                     </div>
                     
                     <div >
@@ -125,9 +116,8 @@
                     <?php
                         }
                     ?>
-            </div>
         </div>
-    
+    </div>
 </div>
 
 <?= $this->endSection(); ?>

@@ -42,6 +42,8 @@ $routes->get('/about', 'home::about');
 $routes->get('/contact', 'home::contact');
 $routes->get('/testimony', 'home::testimony');
 $routes->get('/detail/(:segment)', 'home::detail/$1');
+$routes->get('/detail/kategori/(:segment)', 'home::kategori/$1');
+$routes->post('/pesan', 'Home::store');
 
 $routes->get('/admin', 'Auth::login');
 $routes->get('/login', 'Auth::login');
