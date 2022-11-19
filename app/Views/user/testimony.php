@@ -1,7 +1,7 @@
 <?= $this->extend('template/index'); ?>
 
 <?= $this->Section('content'); ?>
-<div class="grid grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2">
+<div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
    <!-- left -->
    <div class="border text-right px-2 max-md:hidden">
         <ul class="my-2 grid gap-y-2 text-gray-900 divide-y divide-gray-200 dark:divide-gray-700 text-blue-500">
