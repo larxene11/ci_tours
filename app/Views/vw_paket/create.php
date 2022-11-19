@@ -16,7 +16,7 @@
     <?php endif; ?>
 
 <div class="w-full lg:w-full my-6 px-2 pr-0 lg:pr-2">
-    <p class="text-xl pb-6 flex items-center">
+    <p class="text-xl px-1 pb-6 flex items-center">
          <i class="fas fa-list mr-3"></i> Form Tambah Data Paket
     </p>
     <div class="leading-loose">

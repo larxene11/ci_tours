@@ -3,7 +3,7 @@
 <?= $this->Section('content'); ?>
 <!-- Begin Page Content -->
 <div class="w-full mt-6">
-    <p class="text-xl pb-3 flex items-center">
+    <p class="text-xl px-1 pb-3 flex items-center">
         <i class="fas fa-list mr-3"></i> Tabel Kategori
     </p>
 </div>

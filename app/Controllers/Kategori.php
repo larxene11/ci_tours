@@ -54,13 +54,37 @@ class Kategori extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
+            'detail_kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'gambar_kategori' => [
+                'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
+                ]
+            ],
             
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
+        //mengambil gambar
+        $fileGambar = $this->request->getFile('gambar_kategori');
+        if ($fileGambar->getError() == 4){
+            $namaGambar = 'default.jpg';
+        }else{
+            $fileGambar -> move('img');
+            $namaGambar = $fileGambar->getName();
+        }
         $this->kategori->insert([
-            'nama_kategori' => $this->request->getVar('nama_kategori')
+            'nama_kategori' => $this->request->getVar('nama_kategori'),
+            'detail_kategori' => $this->request->getVar('detail_kategori'),
+            'gambar_kategori' => $namaGambar
         ]);
 
         session()->setFlashdata('message', 'Tambah Data Kategori Berhasil');
@@ -94,14 +118,39 @@ class Kategori extends BaseController
                 'errors' => [
                     'required' => '{field} Harus diisi'
                 ]
-            ]
+            ],
+            'detail_kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'gambar_kategori' => [
+                'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar terlalu besar',
+                    'is_image' => 'Yang anda pilih bukan gambar',
+                    'mime_in' => 'Yang anda pilih bukan gambar'
+                ]
+            ],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back();
         }
+        
+        $fileGambar = $this->request->getFile('gambar_kategori');
+        if ($fileGambar->getError() == 4){
+            $namaGambar = $this->request->getVar('gambarLama');
+        }else{
+            $namaGambar = $fileGambar->getName();
+            $fileGambar -> move('img', $namaGambar);
+            unlink('img/' . $this->request->getVar('gambarLama'));
+        }
 
         $this->kategori->update($id, [
-            'nama_kategori' => $this->request->getVar('nama_kategori')
+            'nama_kategori' => $this->request->getVar('nama_kategori'),
+            'detail_kategori' => $this->request->getVar('detail_kategori'),
+            'gambar_kategori' => $namaGambar
         ]);
 
         session()->setFlashdata('message', 'Update Data Kategori Berhasil');
