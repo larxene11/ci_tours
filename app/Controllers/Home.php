@@ -18,7 +18,8 @@ class Home extends BaseController
     {
         $data['paket'] = $this->paket->getAll();
         $data['kategori'] = $this->kategori->findAll();
-        return dd($data['kategori']);
+        // return dd($data['paket']);
+        // return dd([$data['kategori'][1]['id_kategori'] == $data['paket'][2]['id_kategori']]);
         return view('user/paket', $data);
 
     }

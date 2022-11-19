@@ -20,35 +20,30 @@
             <li class="hover:text-gray-900"><a href="#">Package CB</a></li>
             <li class="hover:text-gray-900"><a href="#">Package CC</a></li>
         </ul> -->
-        <div class="table-responsive">
-            <table class="w-full text-sm text-right">
+        <div class="w-full text-sm text-right">
             <?php
-                    $no = 1;
-                    foreach ($kategori as $row) {
-                ?>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                        <tr>
-                            <td class="py-3 px-4"><?= $row['nama_kategori']; ?></td>
-                            <div>
-                                <?php
-                                    foreach ($paket as $item){
-                                ?>
-                                <div>
-                                <?php if($item['nama_kategori'] == $row['nama_kategori']): ?>
+                $no = 1;
+                foreach ($kategori as $row) {
+            ?>
+                    <div class="font-bold uppercase bg-gray-50 py-2 px-3">
+                        <?= $row['nama_kategori']; ?>
+                    </div>
+                    
+                    <div >
+                        <?php
+                            foreach ($paket as $item){
+                        ?>
+                            <div class="py-1 px-3">
+                                <?php if($item['id_kategori'] == $row['id_kategori']): ?>
                                     <?= $item['nama_paket']; ?>
-                                    <?php endif; ?>
-                                </div>
-                                <?php } ?>
+                                    <hr class="mt-1">
+                                <?php endif; ?>
                             </div>
-                        </tr>
-                    </thead>
-                    <!-- <tr>
-                        <td class="py-3 px-4"><?= $item['nama_paket']; ?></td>
-                    </tr> -->
+                            <?php } ?>
+                    </div>
                     <?php
                         }
                     ?>
-            </table>
         </div>
     </div>
 
