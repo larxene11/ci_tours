@@ -53,7 +53,6 @@ $routes->post('/register/process', 'Auth::valid_register');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Admin::index');
-$routes->get('/kalender', 'Admin::kalender');
 
 $routes->get('/data/pesanan', 'Pesanan::index');
 $routes->get('/pesanan/new', 'Pesanan::create');
