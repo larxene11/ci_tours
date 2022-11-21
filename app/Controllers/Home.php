@@ -18,6 +18,7 @@ class Home extends BaseController
 
     public function index()
     {
+        $data['judul'] = 'Bali Tours';
         $data['paket'] = $this->paket->getAll();
         $data['kategori'] = $this->kategori->findAll();
         // return dd($data['paket']);
@@ -29,6 +30,7 @@ class Home extends BaseController
     public function detail($id)
     {
         $dataPaket = $this->paket->find($id);
+        $data['judul'] = 'Bali Tours | ' .  $dataPaket['nama_paket'];
         if (empty($dataPaket)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Paket Tidak ditemukan !');
         }
@@ -85,6 +87,7 @@ class Home extends BaseController
     public function kategori($id)
     {
         $dataKategori = $this->kategori->find($id);
+        $data['judul'] = 'Bali Tours | ' . $dataKategori['nama_kategori'];
         if (empty($dataKategori)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Paket Tidak ditemukan !');
         }
@@ -96,20 +99,39 @@ class Home extends BaseController
 
     public function about()
     {
+        $data['judul'] = 'Bali Tours | About Us';
         $data['paket'] = $this->paket->getAll();
         $data['kategori'] = $this->kategori->findAll();
         return view('user/about', $data);
     }
     public function contact()
     {
+        $data['judul'] = 'Bali Tours | Contact Us';
         $data['paket'] = $this->paket->getAll();
         $data['kategori'] = $this->kategori->findAll();
         return view('user/contact', $data);
     }
     public function testimony()
     {
+        $data['judul'] = 'Bali Tours | Testimony';
         $data['paket'] = $this->paket->getAll();
         $data['kategori'] = $this->kategori->findAll();
         return view('user/testimony', $data);
+    }
+
+    public function sitemap()
+    {
+        $data['judul'] = 'Bali Tours | Sitemap';
+        $data['paket'] = $this->paket->getAll();
+        $data['kategori'] = $this->kategori->findAll();
+        return view('user/sitemap', $data);
+    }
+
+    public function terms()
+    {
+        $data['judul'] = 'Bali Tours | Terms and Conditions';
+        $data['paket'] = $this->paket->getAll();
+        $data['kategori'] = $this->kategori->findAll();
+        return view('user/terms', $data);
     }
 }

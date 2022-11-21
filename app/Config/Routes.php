@@ -41,6 +41,8 @@ $routes->get('/detail', 'home::detail');
 $routes->get('/about', 'home::about');
 $routes->get('/contact', 'home::contact');
 $routes->get('/testimony', 'home::testimony');
+$routes->get('/sitemap', 'home::sitemap');
+$routes->get('/terms-and-condition', 'home::terms');
 $routes->get('/detail/(:segment)', 'home::detail/$1');
 $routes->get('/detail/kategori/(:segment)', 'home::kategori/$1');
 $routes->post('/pesan', 'Home::store');

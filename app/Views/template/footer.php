@@ -4,25 +4,22 @@
     <div class="flex flex-wrap border px-2">
     <div class="flex flex-row">
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6 ">Home</a>
+            <a href="<?= base_url('/') ?>" class="mr-4 hover:underline md:mr-6 ">Home</a>
         </li>
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">About Us</a>
+            <a href="<?= base_url('/about') ?>" class="mr-4 hover:underline md:mr-6">About Us</a>
         </li>
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Contact Us</a>
+            <a href="<?= base_url('/contact') ?>" class="mr-4 hover:underline md:mr-6">Contact Us</a>
         </li>
         <li>
             <a href="#" class="mr-4 hover:underline md:mr-6 ">Terms and Condition</a>
         </li>
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6 ">Bali Places of Interest</a>
+            <a href="<?= base_url('/testimony') ?>" class="mr-4 hover:underline md:mr-6">Testimony</a>
         </li>
         <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Testimony</a>
-        </li>
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Site Map</a>
+            <a href="<?= base_url('/sitemap') ?>" class="mr-4 hover:underline md:mr-6">Site Map</a>
         </li>
     </div>
         <p>Address : Lorem Ipsum | Phone or Whatsapp : +6211 1111 1111 | email : lorem@ipsum.com| website : www.lipsum.com
