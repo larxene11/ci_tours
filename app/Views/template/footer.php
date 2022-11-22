@@ -1,7 +1,7 @@
 
 <footer class="">
     <ul class="items-center mx-auto max-w-screen-xl md:text-xs sm:text-sm text-gray-900 dark:text-gray-900 sm:mt-0 px-4">
-    <div class="flex flex-wrap border px-2 grid-rows-2">
+    <div class="grid grid-rows-2 border px-2">
         <div class="flex flex-row">
             <li>
                 <a href="<?= base_url('/') ?>" class="mr-4 hover:underline md:mr-6 ">Home</a>
