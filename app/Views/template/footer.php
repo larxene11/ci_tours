@@ -1,6 +1,6 @@
 
 <footer class="">
-    <ul class="inline-block items-center mx-auto max-w-screen-xl md:text-xs sm:text-sm text-gray-900 dark:text-gray-900 sm:mt-0 px-4">
+    <ul class="md:inline-block items-center mx-auto max-w-screen-xl md:text-xs sm:text-sm text-gray-900 dark:text-gray-900 sm:mt-0 px-4">
     <div class="flex flex-wrap border px-2">
     <div class="flex flex-row">
         <li>
