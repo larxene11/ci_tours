@@ -21,6 +21,7 @@
         <li>
             <a href="<?= base_url('/sitemap') ?>" class="mr-4 hover:underline md:mr-6">Site Map</a>
         </li>
+        <br>
     </div>
         <p>Address : Lorem Ipsum | Phone or Whatsapp : +6211 1111 1111 | email : lorem@ipsum.com| website : www.lipsum.com
             <br>lipsum is managed by pt. lipsum | license no : 666.66/77777/XX/ABCD - copyright © 2077 - all rights reserved</p>
