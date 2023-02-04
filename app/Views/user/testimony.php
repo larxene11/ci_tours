@@ -4,7 +4,7 @@
 <div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
    <!-- left -->
    <div class="border text-right max-md:hidden">
-        <div class="w-full text-sm text-right">
+    <div class="w-full text-sm text-right">
             <?php
                 $no = 1;
                 foreach ($kategori as $row) {
@@ -19,7 +19,7 @@
                         <?php
                             foreach ($paket as $item){
                         ?>
-                            <div class="py-1 px-3">
+                            <div class="pt-0.5 px-3">
                                 <?php if($item['id_kategori'] == $row['id_kategori']): ?>
                                     <a href="<?= base_url("/detail/".$item['id_paket']); ?>">
                                         <?= $item['nama_paket']; ?>
@@ -48,8 +48,8 @@
         <div class="flex flex-col items-center bg-white border md:flex-row ">
             <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2" src="/dummyimage.jpg" alt="">
             <div class="flex flex-col justify-between p-4 leading-normal">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Stamford</h5>
+                <p class="mb-3 font-normal text-gray-900">orem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales.</p>
             </div>
         </div>
 
@@ -58,16 +58,16 @@
         <div class="flex flex-col items-center bg-white border md:flex-row ">
             <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2" src="/dummyimage.jpg" alt="">
             <div class="flex flex-col justify-between p-4 leading-normal">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Adam</h5>
+                <p class="mb-3 font-normal text-gray-900">orem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales.</p>
             </div>
         </div>
 
         <div class="flex flex-col items-center bg-white border md:flex-row ">
             <img class="object-cover w-full h-96 md:h-auto md:w-48 mx-2" src="/dummyimage.jpg" alt="">
             <div class="flex flex-col justify-between p-4 leading-normal">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
-                <p class="mb-3 font-normal text-gray-900">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Lauren</h5>
+                <p class="mb-3 font-normal text-gray-900">orem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales.</p>
             </div>
         </div>
     </div>

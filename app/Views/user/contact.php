@@ -4,7 +4,7 @@
 <div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
     <!-- left -->
     <div class="border text-right max-md:hidden">
-        <div class="w-full text-sm text-right">
+    <div class="w-full text-sm text-right">
             <?php
                 $no = 1;
                 foreach ($kategori as $row) {
@@ -19,7 +19,7 @@
                         <?php
                             foreach ($paket as $item){
                         ?>
-                            <div class="py-1 px-3">
+                            <div class="pt-0.5 px-3">
                                 <?php if($item['id_kategori'] == $row['id_kategori']): ?>
                                     <a href="<?= base_url("/detail/".$item['id_paket']); ?>">
                                         <?= $item['nama_paket']; ?>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- right -->
-    <div class="border col-span-2 text-center px-2"><strong>ABOUT BALI TOUR AGENCY</strong><br>
+    <div class="border col-span-2 text-center px-2"><strong>Contact Us</strong><br>
         <strong>Best Bali Tour on-line where we can arrange Bali Day Tours, Bali Trip Packages, Bali Adventure Tours with Tour Guide and Driver</strong><br>
         <div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut quam ut orci bibendum sodales. Aliquam semper nisi tincidunt rhoncus egestas. Integer ut cursus mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis massa purus, molestie tempor facilisis quis, iaculis in nisi. Donec placerat felis ac elit ultrices, nec ornare risus rhoncus. Fusce viverra quam eget erat finibus, eu tempus augue cursus. Proin sem leo, eleifend fringilla fringilla id, feugiat eget ex. Proin id lorem nec eros iaculis gravida. Morbi interdum libero nisl, eu dictum ligula efficitur eu. Morbi sit amet elit justo. Praesent feugiat ultrices est nec facilisis. Nullam nec tincidunt nulla, eu finibus augue. In at pellentesque quam. Curabitur varius, arcu at blandit blandit, nulla arcu interdum lectus, in cursus arcu sem at tortor. Phasellus tristique neque quam, vel dapibus tellus consectetur sed.
             Vestibulum lacus velit, consectetur a laoreet sit amet, iaculis commodo libero. In commodo aliquam enim eu venenatis. Nulla vitae magna pretium, lacinia est vel, ornare purus. In commodo vestibulum tincidunt. Maecenas eu urna lacus. Etiam nibh diam, suscipit id imperdiet sit amet, condimentum vitae odio. Curabitur at feugiat ex. Sed vel dui vel mauris tristique dignissim eu eget mauris. Phasellus justo turpis, finibus id eros eget, porttitor malesuada tellus. Integer non metus arcu. Nullam porta vestibulum enim, nec fermentum lorem tincidunt eget. Duis at nisi diam.

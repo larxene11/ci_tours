@@ -40,6 +40,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/detail', 'home::detail');
 $routes->get('/about', 'home::about');
 $routes->get('/contact', 'home::contact');
+$routes->get('/terms', 'home::terms');
 $routes->get('/testimony', 'home::testimony');
 $routes->get('/sitemap', 'home::sitemap');
 $routes->get('/terms-and-condition', 'home::terms');

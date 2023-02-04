@@ -20,7 +20,7 @@
          <i class="fas fa-list mr-3"></i> Form Tambah Data Kategori
     </p>
     <div class="leading-loose">
-        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/kategori/store') ?>">
+        <form class="w-full p-10 bg-white rounded shadow-xl" method="POST" action="<?= base_url('/kategori/store') ?>" enctype="multipart/form-data">
         <?= csrf_field() ?>
             <div class="mt-2">
                 <label class="block text-sm text-gray-600" for="name">Kategori Paket Tour</label>

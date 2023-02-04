@@ -1,5 +1,4 @@
 <?= $this->extend('template/index'); ?>
-
 <?= $this->Section('content'); ?>
 <div class="grid md:grid-cols-3 gap-1 mx-auto max-w-screen-xl px-4 py-2 sm:grid-cols-1">
     <!-- left -->
@@ -19,7 +18,7 @@
                         <?php
                             foreach ($paket2 as $item){
                         ?>
-                            <div class="py-1 px-3">
+                            <div class="pt-0.5 px-3">
                                 <?php if($item['id_kategori'] == $row['id_kategori']): ?>
                                     <a href="<?= base_url("/detail/".$item['id_paket']); ?>">
                                         <?= $item['nama_paket']; ?>
@@ -53,7 +52,10 @@
         <strong><?= $paket['nama_paket'] ?> Price and Inclusion :</strong>
         <p><?= $paket['nama_paket'] ?></p><br>
         <div class="text-justify">
-            <?= $paket['harga_paket'] ?>
+            <?= $paket['harga_paket'] ?>br
+        </div>
+        <div class="text-justify">
+            <?= $paket['inclusion'] ?>
         </div>
 
 

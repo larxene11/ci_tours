@@ -20,7 +20,7 @@
                                     <a href="<?= base_url("/detail/".$item['id_paket']); ?>">
                                         <?= $item['nama_paket']; ?>
                                     </a>
-                                    <hr class="mt-1">
+                                    <hr>
                                 <?php endif; ?>
                             </div>
                             <?php } ?>

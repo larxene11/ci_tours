@@ -60,31 +60,31 @@ class Kategori extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'gambar_kategori' => [
-                'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
-                'errors' => [
-                    'max_size' => 'Ukuran gambar terlalu besar',
-                    'is_image' => 'Yang anda pilih bukan gambar',
-                    'mime_in' => 'Yang anda pilih bukan gambar'
-                ]
-            ],
+            // 'gambar_kategori' => [
+            //     'rules' => 'max_size[gambar,2048]|is_image[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg]',
+            //     'errors' => [
+            //         'max_size' => 'Ukuran gambar terlalu besar',
+            //         'is_image' => 'Yang anda pilih bukan gambar',
+            //         'mime_in' => 'Yang anda pilih bukan gambar'
+            //     ]
+            // ],
             
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-        //mengambil gambar
-        $fileGambar = $this->request->getFile('gambar_kategori');
-        if ($fileGambar->getError() == 4){
-            $namaGambar = 'default.jpg';
-        }else{
-            $fileGambar -> move('img');
-            $namaGambar = $fileGambar->getName();
-        }
+        // //mengambil gambar
+        // $fileGambar = $this->request->getFile('gambar_kategori');
+        // if ($fileGambar->getError() == 4){
+        //     $namaGambar = 'default.jpg';
+        // }else{
+        //     $fileGambar -> move('img');
+        //     $namaGambar = $fileGambar->getName();
+        // }
         $this->kategori->insert([
             'nama_kategori' => $this->request->getVar('nama_kategori'),
             'detail_kategori' => $this->request->getVar('detail_kategori'),
-            'gambar_kategori' => $namaGambar
+            // 'gambar_kategori' => $namaGambar
         ]);
 
         session()->setFlashdata('message', 'Tambah Data Kategori Berhasil');
